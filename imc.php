@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>IMC</title>
-	  	<style type="text/css">
+	  	<style>
 	  		/*lorsque l'on ne mentionne pas le numero de page les classes container, pagination et page ne sont pas créées*/ 
 	  		.container {
 	  			width: 100%;
@@ -46,7 +46,7 @@
 	 		if (isset($_GET['page'])) {
 
 	 			if ($_GET['page'] < 1 || $_GET['page'] > ceil($nb/$personnesParPage)) {
-	 				echo '<script type="text/javascript">
+	 				echo '<script>
 	 						document.location.href = "imc.php"
 	 					</script>';
 	 			}
@@ -96,7 +96,7 @@
 		    		$k = intval($_GET['page']);
 		    		if ($k > 1) { // '<'
 		    			$k -= 1;
-		    			echo '<div id="pagePrev" class="page"><a href="imc.php?page=' . $k . '"> < </a></div>';
+		    			echo '<div id="pagePrev" class="page"><a href="imc.php?page=' . $k . '"> &lt </a></div>';
 		    		}
 		    		$count = 0; // les index de page
 		    		for ($i = 0; $i < ceil($nb/$personnesParPage); $i += 1) {
@@ -105,7 +105,7 @@
 		    		}
 		    		if ($k < ceil($nb/$personnesParPage) - 1) { // '>'
 			    		$k += 2;
-			    		echo '<div id="pageNext" class="page"><a href="imc.php?page=' . $k . '"> > </a></div>';
+			    		echo '<div id="pageNext" class="page"><a href="imc.php?page=' . $k . '"> &gt </a></div>';
 			    	}
 		    		echo '</div>';	
 		    	}
@@ -131,7 +131,7 @@
 			}
 		?>
 
-	    <script type="text/javascript">
+	    <script>
 
 			gt25 = document.querySelectorAll('.gt25'); // surligner les IMC >= 25
 			for ($i = 0; $i < gt25.length; $i+=1)
