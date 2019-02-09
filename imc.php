@@ -34,7 +34,7 @@
 	<body>
 		<?php include 'data.php.txt'; ?>
 
-		<form method="get" action="imc-v2.php">
+		<form method="get" action="imc.php"> <!-- semble ne pas etre obligatoire -->
 			<input type="hidden" name="page">
 		</form>
 
@@ -70,20 +70,20 @@
 
 					for ($i = ($_GET['page'] - 1) * $personnesParPage; $i < $_GET['page'] * $personnesParPage; $i += 1) {
 						if (isset($data[$i])) {
-							$personne=$data[$i];
-							$m=$personne['Poids'];
-							$t=$personne['Taille']/100;
-							$imc=$m/($t*$t);
+							$personne = $data[$i];
+							$m = $personne['Poids'];
+							$t = $personne['Taille'] / 100;
+							$imc = $m / ($t*$t);
 							if ($imc >= 25)
 								echo "<tr class='gt25'>";
 							else 
 								echo "<tr>";
-							echo "<td>".$personne['Nom']."</td>";
-							echo "<td>".$personne['Prenom']."</td>";
-							echo "<td>".$personne['Email']."</td>";
-							echo "<td>".$personne['Taille']."</td>";
-							echo "<td>".$personne['Poids']."</td>";
-							echo "<td>".round($imc,2)."</td>";
+							echo "<td>" . $personne['Nom'] . "</td>";
+							echo "<td>" . $personne['Prenom'] . "</td>";
+							echo "<td>" . $personne['Email'] . "</td>";
+							echo "<td>" .$personne['Taille'] . "</td>";
+							echo "<td>" . $personne['Poids'] . "</td>";
+							echo "<td>" . round($imc,2) . "</td>";
 							echo "</tr>";
 						}
 					}
