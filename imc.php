@@ -147,6 +147,17 @@
 					echo 'pages[' . $page . '].style.backgroundColor = "#A9A9A9";';
 				}
 			?>
+
+			/*
+
+    Pour le tri du tableau, utiliser la fonction usort
+
+    bool usort ( array &$array , callable $value_compare_func )
+
+    Le deuxième paramètre est une chaîne correspondant à l'identifiant de la fonction d'ordre pour votre tri. Consultez les exemples sur la page de la fonction.
+    Il faut évidemment rajouter un paramètre à votre script.
+
+			*/
 		</script>
 	</body>
 </html>
